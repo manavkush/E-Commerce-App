@@ -5,11 +5,12 @@ import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 
 const Checkout = () => {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
 
   return (
     <div className="checkout">
       <div className="checkout__left">
+        <h3>Hey, {user?.email}</h3>
         <h2 className="checkout__title">Your Cart</h2>
         {/* <CheckoutProduct
           title={"This is a test title"}
