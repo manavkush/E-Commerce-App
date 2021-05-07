@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import CheckoutProduct from "./CheckoutProduct";
@@ -12,14 +12,6 @@ const Checkout = () => {
       <div className="checkout__left">
         <h3>Hey, {user?.email}</h3>
         <h2 className="checkout__title">Your Cart</h2>
-        {/* <CheckoutProduct
-          title={"This is a test title"}
-          id={"1111"}
-          image="https://images-na.ssl-images-amazon.com/images/I/712B4P3yOnL._SL1500_.jpg"
-          price={69000}
-          rating={5}
-        /> */}
-
         {basket.map((item, index) => (
           <CheckoutProduct
             id={index}
@@ -30,9 +22,6 @@ const Checkout = () => {
             index={index}
           />
         ))}
-        {/* CheckoutProduct */}
-        {/* CheckoutProduct */}
-        {/* CheckoutProduct */}
       </div>
 
       <div className="checkout__right">
