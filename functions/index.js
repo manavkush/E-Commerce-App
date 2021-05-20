@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { response } = require("express");
 const stripe = require("stripe")(
-  "sk_test_51IpD2BSJWT40aSTqrX4M6ZENoghnOOsKWwdujihhn9fLj1lfikhFCCo9dJCj2sb5Xtl1khsnkc1BiVZpwd93Fy5L00VdXWZOZI"
+  "sk_test_51HPvU9DFg5koCdLGeOEiFvwHat4v8eMjX6SY0YCwxPBQBUPhKy1fPVhiSM5cQtgW7QBG9ydQcXnW57TDxVE2f3H000HSfmEQZF"
 );
 
 // API
@@ -18,7 +18,8 @@ app.get("/", (req, res) => res.status(200).send("Hello World"));
 
 app.post("/payment/create", async (req, res) => {
   const total = req.query.total;
-
+  
+  console.log(req);
   console.log("Payment Request Recieved for this amount >>>>", total);
 
   const paymentIntent = await stripe.paymentIntents.create({
